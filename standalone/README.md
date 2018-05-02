@@ -7,6 +7,14 @@ You need [Vagrant](https://www.vagrantup.com/) and one virtualization provider (
 * [Vagrant getting started](https://www.vagrantup.com/intro/getting-started/project_setup.html)
 * [Download VirtualBox](https://www.virtualbox.org/)
 
+## Customize the build
+At this moment the [provision.sh](provision.sh) script creates only one validator and one gateway. You can change this config editing the 
+file manually, for example, if you want to create 1 validator node and 2 regular nodes:
+```diff
+- ./bin/start_network.sh clean 1 1
++ ./bin/start_network.sh clean 1 2
+```
+
 ## Install
 To install all dependencies and run the Alastria test-net execute the command
 ```bash

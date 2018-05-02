@@ -1,6 +1,10 @@
 # Configure git to use the proxy, only if needed
 if [ -n $http_proxy ]; then
     git config --global http.proxy $http_proxy
+    # update wget config to add proxy support
+    echo "use_proxy=on" >> /etc/wgetrc
+    echo "http_proxy=$http_proxy" >> /etc/wgetrc
+    echo "https_proxy=$http_proxy" >> /etc/wgetrc
 fi
 cd /opt
 
@@ -8,7 +12,7 @@ cd /opt
 rm -rf test-environment
 
 # Clone the repo and cd into it
-#git clone --depth 1 https://github.com/alastria/test-environment.git
+git clone --depth 1 https://github.com/alastria/test-environment.git
 cd test-environment/infrastructure/testnet
 
 # Install dependencies

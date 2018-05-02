@@ -1,0 +1,5 @@
+.vagrant/
+*.log
+build/
+.todo/
+.DS_Store

@@ -56,6 +56,24 @@ default: [*] constellation node at 9001 is now up.
 default: Verify if /opt/test-environment/infrastructure/testnet/logs/ have new files.
 ```
 
+Also, you can use `netstat` command to see sockets listening:
+
+```bash
+vagrant@ubuntu-xenial:~$ netstat -ntpl
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:9001            0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -
+tcp6       0      0 :::21000                :::*                    LISTEN      -
+tcp6       0      0 :::21001                :::*                    LISTEN      -
+tcp6       0      0 :::22000                :::*                    LISTEN      -
+tcp6       0      0 :::22001                :::*                    LISTEN      -
+tcp6       0      0 :::22                   :::*                    LISTEN      -
+vagrant@ubuntu-xenial:~$
+```
+
 ## How to test it?
 First ssh into the machine
 

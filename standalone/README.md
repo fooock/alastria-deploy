@@ -1,10 +1,11 @@
-# Alastria standalone
+# Alastria standalone installation
 Setup Alastria test-net using [this repo](https://github.com/alastria/test-environment/tree/master/infrastructure/testnet)
 
 ## Requisites
-You need [Vagrant](https://www.vagrantup.com/) to execute this script. See the following link for more info
+You need [Vagrant](https://www.vagrantup.com/) and one virtualization provider (virtualbox, hyperv etc) to execute this script. See the following links for more info:
 * [Download Vagrant](https://www.vagrantup.com/downloads.html)
 * [Vagrant getting started](https://www.vagrantup.com/intro/getting-started/project_setup.html)
+* [Download VirtualBox](https://www.virtualbox.org/)
 
 ## Install
 To install all dependencies and run the Alastria test-net execute the command

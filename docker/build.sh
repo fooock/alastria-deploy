@@ -24,5 +24,4 @@ sudo apt-get update
 sudo apt-get install -y docker-ce
 
 # manage docker as non root user
-sudo groupadd docker
 sudo usermod -aG docker $USER

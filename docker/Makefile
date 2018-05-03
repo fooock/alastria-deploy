@@ -1,8 +1,12 @@
 # base version target
 base_version := 0.1
 
-# Version defaults to the short hash of the latest commit
-VERSION ?= $(base_version)-$(shell git rev-parse --short HEAD)
+# Use a hash of the Dockerfile for the tag, so when the Dockerfile changes,
+# it automatically rebuilds
+build_version := $(shell sha256sum Dockerfile | head -c 10)
+
+# version
+VERSION ?= $(base_version)-$(build_version)
 
 #    ___  ____    ___            _           _
 #   / _ \/ ___|  |_ _|_ __   ___| |_   _  __| | ___

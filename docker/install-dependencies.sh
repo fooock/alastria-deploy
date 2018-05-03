@@ -29,3 +29,9 @@ if [ $? -eq 0 ]; then
 else
     echo [-] Error installing dependencies
 fi
+
+# Remove downloaded files
+cd .. && rm -rf alastria-node
+
+# Clone Alastria test environment
+git clone --depth 1 https://github.com/alastria/test-environment

@@ -39,3 +39,6 @@ build-alastria:
 
 node-shell: build
 	docker run -it alastria-node:$(VERSION) bash -l
+
+install-validator:
+	docker run -it alastria-node:$(VERSION) main

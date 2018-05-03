@@ -44,3 +44,62 @@ If you want to digg in the Alastria node, you can execute the task
 $ make node-shell
 ```
 If no image exists, first it create one, and then give you a fresh shell.
+
+### Starting
+You can execute the tasks `make install-validator` to start a validator node. If all is ok, the output will be something like this
+```bash
+vagrant@ubuntu-xenial:/vagrant$ make install-validator
+docker run -it alastria-node:0.1-800760ca2a main
+[!!] Run this script from the directory test-environment/infrastructure/testnet/
+[*] Cleaning previous environments
+[!!] Run this script from the directory test-environment/infrastructure/testnet
+[*] Preparing to clean the environment
+[!!] Run this script from the directory test-environment/infrastructure/testnet/
+[*] Spreading permissioned nodes config files
+[*] Generating nodes in environment
+[*] Starting validator nodes
+[!!] Number of validators not supported. Please contact @arochaga or any Alastria member for support
+[!!] Excecute from alastria test-environment/infrastructure/testnet/
+[*] Starting main
+Verify if /opt/test-environment/infrastructure/testnet/logs/ have new files.
+```
+Also, you can start directly an Alastria node without using `make`. For example, if you want to start a validator node
+the you need to execute
+
+```bash
+$ docker run -it alastria-node:0.1-34fr23 general1
+```
+And the result, if all is ok will be:
+
+```bash
+vagrant@ubuntu-xenial:/vagrant$ docker run -it alastria-node:0.1-800760ca2a general1
+[!!] Run this script from the directory test-environment/infrastructure/testnet/
+[*] Cleaning previous environments
+[!!] Run this script from the directory test-environment/infrastructure/testnet
+[*] Preparing to clean the environment
+[!!] Run this script from the directory test-environment/infrastructure/testnet/
+[*] Spreading permissioned nodes config files
+[*] Generating nodes in environment
+[*] Starting validator nodes
+[!!] Number of validators not supported. Please contact @arochaga or any Alastria member for support
+[!!] Excecute from alastria test-environment/infrastructure/testnet/
+[*] Starting general1
+localhost [127.0.0.1] 9001 (?) : Connection refused
+localhost [127.0.0.1] 9001 (?) : Connection refused
+localhost [127.0.0.1] 9001 (?) : Connection refused
+localhost [127.0.0.1] 9001 (?) : Connection refused
+localhost [127.0.0.1] 9001 (?) : Connection refused
+localhost [127.0.0.1] 9001 (?) : Connection refused
+localhost [127.0.0.1] 9001 (?) : Connection refused
+localhost [127.0.0.1] 9001 (?) : Connection refused
+localhost [127.0.0.1] 9001 (?) : Connection refused
+localhost [127.0.0.1] 9001 (?) : Connection refused
+localhost [127.0.0.1] 9001 (?) : Connection refused
+localhost [127.0.0.1] 9001 (?) : Connection refused
+localhost [127.0.0.1] 9001 (?) : Connection refused
+localhost [127.0.0.1] 9001 (?) : Connection refused
+localhost [127.0.0.1] 9001 (?) : Connection refused
+localhost [127.0.0.1] 9001 (?) open
+[*] constellation node at 9001 is now up.
+Verify if /opt/test-environment/infrastructure/testnet/logs/ have new files.
+```

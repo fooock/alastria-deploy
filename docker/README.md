@@ -2,7 +2,7 @@
 If you want to test Alastria using Docker then you have two options.
 
 ## Install using Vagrant
-Start the `Vagrantfile` of this repo to install all dependencies, `docker`, `make` etc.
+Start the [`Vagrantfile`](Vagrantfile) of this repo to install all dependencies, `docker`, `make` etc.
 
 ```bash
 $ vagrant up --provision-with shell

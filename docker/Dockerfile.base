@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     nodejs \
     npm \
     software-properties-common \
+    python-software-properties \
     unzip \
     gcc \
     libsodium-dev \

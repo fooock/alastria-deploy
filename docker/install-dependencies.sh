@@ -2,6 +2,8 @@
 # Proxy settings
 https_proxy=$1
 
+add-apt-repository -y ppa:ethereum/ethereum && apt-get update && apt-get install -y solc
+
 # Configure git to use the proxy, only if needed
 if [ -n $https_proxy ]; then
     git config --global http.proxy $https_proxy

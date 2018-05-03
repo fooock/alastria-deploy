@@ -4,11 +4,6 @@ base_version := 0.1
 # Version defaults to the short hash of the latest commit
 VERSION ?= $(base_version)-$(shell git rev-parse --short HEAD)
 
-# Directory that this Makefile is in.
-mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
-build_path := $(dir $(mkfile_path))
-repo_path := $(realpath $(build_path)/..)
-
 #    ___  ____    ___            _           _
 #   / _ \/ ___|  |_ _|_ __   ___| |_   _  __| | ___
 #  | | | \___ \   | || '_ \ / __| | | | |/ _` |/ _ \
@@ -27,5 +22,6 @@ include ./includes/$(osinclude)
 #    |_|\__,_|_|  \__, |\___|\__|___/
 #                 |___/
 
-build: build-quorum
-build-alastria: $(DOCKER) build -t alastria-node-$(VERSION) .
+build: build-alastria
+build-alastria: 
+	docker build -t alastria-node:$(VERSION) .

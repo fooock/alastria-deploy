@@ -4,7 +4,7 @@ sudo apt-get remove docker docker-engine docker.io
 
 # update and install
 sudo apt-get update
-sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common make
 
 # add dokcer official GPG key
 if [ -n $http_proxy ]; then

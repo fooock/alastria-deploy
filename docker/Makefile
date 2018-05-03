@@ -8,6 +8,9 @@ build_version := $(shell sha256sum Dockerfile | head -c 10)
 # version
 VERSION ?= $(base_version)-$(build_version)
 
+# proxy config
+PROXY = ${HTTP_PROXY}
+
 #    ___  ____    ___            _           _
 #   / _ \/ ___|  |_ _|_ __   ___| |_   _  __| | ___
 #  | | | \___ \   | || '_ \ / __| | | | |/ _` |/ _ \
@@ -26,6 +29,10 @@ include ./includes/$(osinclude)
 #    |_|\__,_|_|  \__, |\___|\__|___/
 #                 |___/
 
-build: build-alastria
+build: build-base-image build-alastria
+
+build-base-image:
+	docker build --build-arg http_proxy=$(PROXY) -t alastria-base -f Dockerfile.base .
+
 build-alastria: 
-	docker build -t alastria-node:$(VERSION) .
+	docker build --build-arg http_proxy=$(PROXY) -t alastria-node:$(VERSION) .

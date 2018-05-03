@@ -20,9 +20,21 @@ $ make build
 The result image will be something like `alastria-node:0.1-31fdd47d00`, where `0.1` is the base version, and `31fdd47d00` is the
 hash of the `Dockerfile`, so when the Dockerfile changes, it automatically rebuilds.
 
-## Build `Dockerfile` and run Alastria
-First build the image
+```bash
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+alastria-base       latest              99c40f8fba36        About an hour ago   1.97GB
+alastria-node       0.1-f0ac32baea      99c40f8fba36        About an hour ago   1.97GB
+```
 
+## Build `Dockerfile` and run Alastria
+First build the base image
+
+```bash
+$ docker build -t alastria-base -f Dockerfile.base .
+```
+> **Tip** You can use `--build-arg http_proxy=` to pass your proxy config 
+
+When done, build the alastria-node image
 ```bash
 $ docker build -t alastria-node .
 ```

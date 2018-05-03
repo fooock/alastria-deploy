@@ -4,13 +4,26 @@ ENV http_proxy ${http_proxy}
 ENV https_proxy ${http_proxy}
 
 # Install dependencies
-RUN apt-get update && apg-get install git \
+RUN apt-get update && apt-get install -y \
+    git \
     make \
     wget \
     sudo \
     netcat\
     nodejs \
-    npm
+    npm \
+    software-properties-common \
+    unzip \
+    gcc \
+    libsodium-dev \
+    build-essential \
+    libdb-dev \
+    zlib1g-dev \
+    libtinfo-dev \
+    sysvbanner \
+    wrk \
+    psmisc \
+    libleveldb-dev
 
 # Copy installation script
 COPY install-dependencies.sh /opt

@@ -2,9 +2,6 @@
 # Proxy settings
 https_proxy=$1
 
-# Install dependencies for Alastria node
-# apt-get update && apt-get install -y git make sudo wget netcat nodejs npm
-
 # Configure git to use the proxy, only if needed
 if [ -n $https_proxy ]; then
     git config --global http.proxy $https_proxy
@@ -16,14 +13,14 @@ fi
 cd /opt
 
 # Remove any existing directory
-rm -rf test-environment
+rm -rf alastria-node
 
 # Clone the repo and cd into it
-git clone --depth 1 https://github.com/alastria/test-environment.git
-cd test-environment/infrastructure/testnet
+git clone --depth 1 https://github.com/fooock/alastria-node.git
+cd alastria-node/
 
 # Install dependencies
-./bin/bootstrap.sh
+sudo ./scripts/bootstrap.sh
 
 # If the dependencies installation was successful, start the local
 # test-net with one validator and one gateway

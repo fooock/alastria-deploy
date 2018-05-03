@@ -1,6 +1,11 @@
 # Install Alastria using Docker
 If you want to test Alastria using Docker then you have two options.
 
+## Alastria base image
+I built a base Docker image with all common components for validator and regular nodes. You can build this image
+executing the task `make build-base-image`. If you use a proxy, this task automatically uses it to build the image.
+This can take a while.
+
 ## Install using Vagrant
 Start the [`Vagrantfile`](Vagrantfile) of this repo to install all dependencies, `docker`, `make` etc.
 

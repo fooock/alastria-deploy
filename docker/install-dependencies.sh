@@ -3,7 +3,7 @@
 https_proxy=$1
 
 # Install dependencies for Alastria node
-apt-get update && apt-get install -y git make sudo wget netcat
+# apt-get update && apt-get install -y git make sudo wget netcat nodejs npm
 
 # Configure git to use the proxy, only if needed
 if [ -n $https_proxy ]; then

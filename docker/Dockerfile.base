@@ -3,6 +3,15 @@ FROM ubuntu:16.04
 ENV http_proxy ${http_proxy}
 ENV https_proxy ${http_proxy}
 
+# Install dependencies
+RUN apt-get update && apg-get install git \
+    make \
+    wget \
+    sudo \
+    netcat\
+    nodejs \
+    npm
+
 # Copy installation script
 COPY install-dependencies.sh /opt
 

@@ -36,3 +36,6 @@ build-base-image:
 
 build-alastria: 
 	docker build --build-arg http_proxy=$(PROXY) -t alastria-node:$(VERSION) .
+
+node-shell: build
+	docker run -it alastria-node:$(VERSION) bash -l

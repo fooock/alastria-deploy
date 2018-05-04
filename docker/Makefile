@@ -9,7 +9,10 @@ build_version := $(shell sha256sum Dockerfile | head -c 10)
 VERSION ?= $(base_version)-$(build_version)
 
 # proxy config
-PROXY = ${HTTP_PROXY}
+PROXY ?= ${HTTP_PROXY}
+
+# Params
+PARAMS ?= 
 
 #    ___  ____    ___            _           _
 #   / _ \/ ___|  |_ _|_ __   ___| |_   _  __| | ___
@@ -40,5 +43,5 @@ build-alastria:
 node-shell: build
 	docker run -it alastria-node:$(VERSION) bash -l
 
-install-validator:
-	docker run -it alastria-node:$(VERSION) main
+install:
+	docker run -it alastria-node:$(VERSION) $(PARAMS)

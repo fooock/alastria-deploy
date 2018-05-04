@@ -29,7 +29,7 @@ alastria-node       0.1-f0ac32baea      99c40f8fba36        About an hour ago   
 ```
 
 ## Build `Dockerfile` and run Alastria
-First build the base image
+If you don't want to use `make build`, then you need to build the base image first
 
 ```bash
 $ docker build -t alastria-base -f Dockerfile.base .
@@ -40,12 +40,14 @@ When done, build the alastria-node image
 ```bash
 $ docker build -t alastria-node .
 ```
+
 ## Start shell in Alastria node
 If you want to digg in the Alastria node, you can execute the task
 ```bash
 $ make node-shell
 ```
 If no image exists, first it create one, and then give you a fresh shell.
+* Check [Makefile](Makefile) for more details
 
 ### Starting
 You can execute the tasks `make install` with the type of the node in the `PARAMS` argument to start a node. If all is ok, the output will be something like this

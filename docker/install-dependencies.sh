@@ -36,4 +36,4 @@ fi
 cd .. && rm -rf alastria-node
 
 # Clone Alastria test environment
-git clone --depth 1 https://github.com/alastria/test-environment
+git clone --depth 1 https://github.com/fooock/test-environment

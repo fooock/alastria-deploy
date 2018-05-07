@@ -11,5 +11,5 @@ EXPOSE 21000-21010/udp
 # RPC
 EXPOSE 22000-22010/tcp
 
-COPY start.sh /opt/test-environment/infrastructure/testnet
+COPY ./scripts/start.sh /opt/test-environment/infrastructure/testnet
 WORKDIR /opt/test-environment/infrastructure/testnet

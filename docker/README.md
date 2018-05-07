@@ -106,6 +106,7 @@ localhost [127.0.0.1] 9001 (?) open
 [*] constellation node at 9001 is now up.
 Verify if /opt/test-environment/infrastructure/testnet/logs/ have new files.
 ```
+See the next section if you want to tune the network options.
 
 ## Network
 List of exposed ports by default:

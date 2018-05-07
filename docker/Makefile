@@ -44,4 +44,5 @@ node-shell: build
 	docker run -it alastria-node:$(VERSION) bash -l
 
 install:
-	docker run -d alastria-node:$(VERSION) bash -c "./start.sh $(PARAMS)"
+	docker run  -p 9000:9000 -p 21000-21010:21000-21010/tcp -p 21000-21010:21000-21010/udp -p 22000-22010:22000-22010 \
+	-d alastria-node:$(VERSION) bash -c "./start.sh $(PARAMS)"

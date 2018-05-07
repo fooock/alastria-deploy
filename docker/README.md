@@ -106,3 +106,16 @@ localhost [127.0.0.1] 9001 (?) open
 [*] constellation node at 9001 is now up.
 Verify if /opt/test-environment/infrastructure/testnet/logs/ have new files.
 ```
+
+## Network
+List of exposed ports
+
+| Ports 	| Description 	|
+|--------	|--------	|
+| `9000/tcp`   	| Constellation communication  	|
+| `21000-21010/tcp/udp`   	| Communication between `geth` processes  	|
+| `22000-22010/tcp`   	| RPC communication  	|
+
+For more info see:
+* [Alastria documentation](https://github.com/alastria/alastria-node#requisitos-del-sistema)
+* [Makefile](Makefile)

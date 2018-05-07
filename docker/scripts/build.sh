@@ -1,4 +1,6 @@
 
+sudo su
+
 # uninstall old versions
 sudo apt-get remove docker docker-engine docker.io
 
@@ -24,7 +26,7 @@ sudo apt-get update
 sudo apt-get install -y docker-ce
 
 # manage docker as non root user
-sudo usermod -aG docker $USER
+sudo usermod -aG docker vagrant
 
 # change DNS servers
 echo "DOCKER_OPTS=\"--dns 8.8.8.8 --dns 8.8.4.4\"" >> /etc/default/docker

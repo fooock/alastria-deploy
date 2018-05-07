@@ -11,8 +11,9 @@ VERSION ?= $(base_version)-$(build_version)
 # proxy config
 PROXY ?= ${HTTP_PROXY}
 
-# Params
+# Alastria node start params and node name
 PARAMS ?= 
+NAME ?= 
 
 #    ___  ____    ___            _           _
 #   / _ \/ ___|  |_ _|_ __   ___| |_   _  __| | ___
@@ -45,4 +46,4 @@ node-shell: build
 
 install:
 	docker run  -p 9000:9000 -p 21000-21010:21000-21010/tcp -p 21000-21010:21000-21010/udp -p 22000-22010:22000-22010 \
-	-d alastria-node:$(VERSION) bash -c "./start.sh $(PARAMS)"
+	--name $(NAME) -d alastria-node:$(VERSION) bash -c "./start.sh $(PARAMS)"

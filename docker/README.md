@@ -50,9 +50,9 @@ If no image exists, first it create one, and then give you a fresh shell.
 * Check [Makefile](Makefile) for more details
 
 ### Starting
-You can execute the tasks `make install` with the type of the node in the `PARAMS` argument to start a node. If all is ok, the output will be something like this
+You can execute the tasks `make install` with the type of the node in the `PARAMS` argument to start a node and the `NAME` that will have. If all is ok, the output will be something like this:
 ```bash
-vagrant@ubuntu-xenial:/vagrant$ make install PARAMS=main
+vagrant@ubuntu-xenial:/vagrant$ make install NAME=main PARAMS=main
 docker run -it alastria-node:0.1-800760ca2a main
 [!!] Run this script from the directory test-environment/infrastructure/testnet/
 [*] Cleaning previous environments
@@ -67,6 +67,8 @@ docker run -it alastria-node:0.1-800760ca2a main
 [*] Starting main
 Verify if /opt/test-environment/infrastructure/testnet/logs/ have new files.
 ```
+> :warning: **Important** :warning: `NAME` and `PARAMS` are mandatory to start a node successfully
+
 Also, you can start directly an Alastria node without using `make`. For example, if you want to start a validator node, then you need to execute:
 
 ```bash

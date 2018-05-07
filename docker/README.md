@@ -111,11 +111,12 @@ See the next section if you want to tune the network options.
 ## Network
 List of exposed ports by default:
 
-| **Ports**             	| **Description**                          	| **Makefile parameter**               	|
-|-----------------------	|------------------------------------------	|--------------------------------------	|
-| `9000/tcp`            	| Constellation communication              	| `CONSTELLATION_PORT`                 	|
-| `21000-21010/tcp/udp` 	| Communication between `geth`  processes  	| `GETH_PORT_TCP`  and `GETH_PORT_UDP` 	|
-| `22000-22010/tcp`     	| RPC communication                        	| `RPC_PORT`                           	|
+
+| **Ports**                            	| **Description**                          	| **Makefile parameter**               	|
+|--------------------------------------	|------------------------------------------	|--------------------------------------	|
+| `9000/tcp`                           	| Constellation communication              	| `CONSTELLATION_PORT`                 	|
+| `21000-21010/tcp`  `21000-21010/udp` 	| Communication between `geth`  processes  	| `GETH_PORT_TCP`  and `GETH_PORT_UDP` 	|
+| `22000-22010/tcp`                    	| RPC communication                        	| `RPC_PORT`                           	|
 
 Modify the host ports if you want to run validator nodes and regular nodes in the same machine. As the [Alastria documentation](https://github.com/alastria/alastria-node#requisitos-del-sistema) says, the container **must** use
 the ports:
@@ -123,8 +124,9 @@ the ports:
 * `9000/tcp` Constellation
 * `21000/tcp/udp` geth proccesses
 * `22000/tcp` rpc
-
+> **Tip** Configure your firewall using `ufw`
 
 For more info see:
 * [Alastria documentation](https://github.com/alastria/alastria-node#requisitos-del-sistema)
 * [Makefile](Makefile)
+* [UFW](https://help.ubuntu.com/community/UFW)

@@ -108,13 +108,21 @@ Verify if /opt/test-environment/infrastructure/testnet/logs/ have new files.
 ```
 
 ## Network
-List of exposed ports
+List of exposed ports by default:
 
-| Ports 	| Description 	|
-|--------	|--------	|
-| `9000/tcp`   	| Constellation communication  	|
-| `21000-21010/tcp/udp`   	| Communication between `geth` processes  	|
-| `22000-22010/tcp`   	| RPC communication  	|
+| Ports 	| Description 	| Makefile parameter |
+|--------	|--------	|   |--------	|
+| `9000/tcp`   	| Constellation communication  	|   `CONSTELLATION_PORT`    |
+| `21000-21010/tcp/udp`   	| Communication between `geth` processes  	|   `GETH_PORT_TCP` and `GETH_PORT_UDP` |
+| `22000-22010/tcp`   	| RPC communication  	|   `RPC_PORT`  |
+
+Modify the host ports if you want to run validator nodes and regular nodes in the same machine. As the [Alastria documentation](https://github.com/alastria/alastria-node#requisitos-del-sistema) says, the container **must** use
+the ports:
+* `8443/tcp`
+* `9000/tcp` Constellation
+* `21000/tcp/udp` geth proccesses
+* `22000/tcp` rpc
+
 
 For more info see:
 * [Alastria documentation](https://github.com/alastria/alastria-node#requisitos-del-sistema)

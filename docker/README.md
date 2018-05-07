@@ -1,5 +1,3 @@
-:warning: :warning: :warning: **Currently in development** :warning: :warning: :warning:
-
 # Install Alastria using Docker
 If you want to test Alastria using Docker then you have two options.
 

@@ -1,4 +1,5 @@
 FROM alastria-base
+LABEL maintainer="Javi <nhitbh@gmail.com>"
 
 # Monitoring
 EXPOSE 8443/tcp

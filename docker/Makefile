@@ -11,8 +11,8 @@ VERSION ?= $(base_version)-$(build_version)
 # proxy config
 PROXY ?= ${HTTP_PROXY}
 
-# Alastria node start params and node name
-PARAMS ?= 
+# Alastria node start type and node name
+TYPE ?= 
 NAME ?= 
 # Network ports
 CONSTELLATION_PORT ?= 9000:9000
@@ -51,4 +51,4 @@ node-shell: build
 
 install:
 	docker run  -p $(CONSTELLATION_PORT) -p $(GETH_PORT_TCP) -p $(GETH_PORT_UDP) -p $(RPC_PORT) \
-	--name $(NAME) -d alastria-node:$(VERSION) bash -c "./start.sh $(PARAMS)"
+	--name $(NAME) -d alastria-node:$(VERSION) bash -c "./start.sh $(TYPE)"

@@ -6,6 +6,10 @@ I built a base Docker image with all common components for validator and regular
 executing the task `make build-base-image`. If you use a proxy, this task automatically uses it to build the image.
 This can take a while.
 
+## Makefile tasks
+You can execute multiple tasks provided by the [Makefile](Makefile).
+
+
 ## Install using Vagrant
 Start the [`Vagrantfile`](Vagrantfile) of this repo to install all dependencies, `docker`, `make` etc.
 
@@ -48,9 +52,9 @@ If no image exists, first it create one, and then give you a fresh shell.
 * Check [Makefile](Makefile) for more details
 
 ### Starting
-You can execute the tasks `make install` with the type of the node in the `TYPE` argument to start a node and the `NAME` that will have. If all is ok, the output will be something like this:
+You can execute the task `make install-test-basic` with the type of the node in the `TYPE` argument to start a node and the `NAME` that will have. If all is ok, the output will be something like this:
 ```bash
-vagrant@ubuntu-xenial:/vagrant$ make install NAME=main TYPE=main
+vagrant@ubuntu-xenial:/vagrant$ make install-test-basic NAME=main TYPE=main
 docker run -it alastria-node:0.1-800760ca2a main
 [!!] Run this script from the directory test-environment/infrastructure/testnet/
 [*] Cleaning previous environments

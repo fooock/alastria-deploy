@@ -49,6 +49,9 @@ build-alastria:
 node-shell: build
 	docker run -it alastria-node:$(VERSION) bash -l
 
-install:
+install-test-complete:
 	docker run  -p $(CONSTELLATION_PORT) -p $(GETH_PORT_TCP) -p $(GETH_PORT_UDP) -p $(RPC_PORT) \
 	--name $(NAME) -d alastria-node:$(VERSION) bash -c "./start.sh $(TYPE)"
+
+install-test-basic:
+	docker run --name $(NAME) -d alastria-node:$(VERSION) bash -c "./start.sh $(TYPE)"

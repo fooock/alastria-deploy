@@ -9,6 +9,24 @@ This can take a while.
 ## Makefile tasks
 You can execute multiple tasks provided by the [Makefile](Makefile).
 
+| **Name**                	| **Description**                                                              	|
+|-------------------------	|------------------------------------------------------------------------------	|
+| `build`                 	| Builds the base and node Alastria images                                     	|
+| `build-base-image`      	| Build only the Alastria base image                                           	|
+| `build-alastria`        	| Build the Alastria node image                                                	|
+| `install-test-complete` 	| Execute the Alastria node indicated by it's type, name, and different ports 	|
+| `install-test-basic`    	| Execute the Alastria node indicated by it's type and name                    	|
+| `node-shell`            	| Obtain a shell into a running node                                           	|
+
+For each task you can use different values to customize it:
+
+| **Name** 	| **Description**                                     	| **Used in**                                      	|
+|----------	|-----------------------------------------------------	|--------------------------------------------------	|
+| `TYPE`   	| Type of the node, `main`, `general1` .... Mandatory 	| `install-test-complete` and `install-test-basic` 	|
+| `NAME`   	| Name of the running container. Mandatory            	| `install-test-complete` and `install-test-basic` 	|
+
+For a complete list of customizable port parameters see the [network](#network) section.
+
 
 ## Install using Vagrant
 Start the [`Vagrantfile`](Vagrantfile) of this repo to install all dependencies, `docker`, `make` etc.
